@@ -73,6 +73,11 @@ app.post('/users/signup', urlencodedParser, function(req, res) {
       })
     }
   })
+  .catch (err => {
+    res.status(401).send({
+      'message': 'Incorrect Username/Password'
+    })
+  })
 })
 
 
